@@ -1,10 +1,12 @@
 from aocd.models import Puzzle
 from aocd.transforms import lines
 
-# Setup
+# Input
 puzzle = Puzzle(year=2022, day=1)
-running_calorie_count = 0
 calories = lines(puzzle.input_data)
+
+# Solution
+running_calorie_count = 0
 elf_calorie_totals = []
 for calorie in calories:
     if not calorie:
