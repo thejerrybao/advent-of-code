@@ -110,9 +110,9 @@ for rps_game in encrypted_rps_strategy_guide:
     enc_opponent_choice, enc_desired_outcome = rps_game.split()
 
     opponent_rps_choice = RPSChoice.get_rps_choice(enc_opponent_choice)
-    desired_outcome = part_b_conversion.get(enc_desired_outcome)
+    player_desired_outcome = part_b_conversion.get(enc_desired_outcome)
 
-    score = get_score_part_b(opponent_rps_choice, desired_outcome)
+    score = get_score_part_b(opponent_rps_choice, player_desired_outcome)
     total_score_part_b += score
 
 puzzle.answer_b = total_score_part_b

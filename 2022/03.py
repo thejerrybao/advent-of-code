@@ -12,6 +12,8 @@ item_priority = {
     for index, letter
     in enumerate(ascii_letters)
 }
+
+
 def get_common_rucksack_item(list_of_rucksacks):
     rucksack_sets = [set(x) for x in list_of_rucksacks]
     intersecting_set = rucksack_sets.pop()
@@ -21,6 +23,7 @@ def get_common_rucksack_item(list_of_rucksacks):
     # Checking that only one item intersects
     assert len(intersecting_set) == 1
     return intersecting_set.pop()
+
 
 # Answer A
 total_item_priority_sum_part_a = 0
