@@ -2,6 +2,7 @@ from aocd.models import Puzzle
 from aocd.transforms import lines
 from enum import Enum
 
+# Input
 puzzle = Puzzle(year=2022, day=2)
 encrypted_rps_strategy_guide = lines(puzzle.input_data)
 
