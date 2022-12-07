@@ -88,6 +88,7 @@ operations = [Operation.parse_operation(operation_string)
               for operation_string
               in operation_strings]
 
+# Solution
 # Answer A
 crate_stacks_part_a = deepcopy(crate_stacks)
 for operation in operations:
