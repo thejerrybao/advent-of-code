@@ -3,7 +3,6 @@ from aocd.transforms import lines
 from collections import deque
 from copy import deepcopy
 
-# Input
 puzzle = Puzzle(year=2022, day=5)
 input_data = lines(puzzle.input_data)
 
@@ -88,15 +87,12 @@ operations = [Operation.parse_operation(operation_string)
               for operation_string
               in operation_strings]
 
-# Solution
-# Answer A
 crate_stacks_part_a = deepcopy(crate_stacks)
 for operation in operations:
     crate_stacks_part_a.execute_operation_crate_mover_9000(operation)
 
 puzzle.answer_a = crate_stacks_part_a.get_top_of_stacks()
 
-# Answer B
 crate_stacks_part_b = deepcopy(crate_stacks)
 for operation in operations:
     crate_stacks_part_b.execute_operation_crate_mover_9001(operation)

@@ -2,14 +2,11 @@ from aocd.models import Puzzle
 from aocd.transforms import lines
 from enum import Enum
 
-# Input
 puzzle = Puzzle(year=2022, day=2)
 encrypted_rps_strategy_guide = lines(puzzle.input_data)
 
 
-# Solution
 class RPSChoice(Enum):
-    # Hacky way to encode winning/losing choices by predefining strings
     ROCK = 1
     PAPER = 2
     SCISSORS = 3
@@ -58,7 +55,6 @@ class RPSOutcome(Enum):
         self.outcome_score = outcome_score
 
 
-# Answer A
 def get_score_part_a(opponent_choice, player_choice):
     outcome = RPSOutcome.LOSS
     if opponent_choice == player_choice:
@@ -89,7 +85,6 @@ for rps_game in encrypted_rps_strategy_guide:
 puzzle.answer_a = total_score_part_a
 
 
-# Answer B
 def get_score_part_b(opponent_choice, desired_outcome):
     player_choice = opponent_choice
     if desired_outcome == RPSOutcome.WIN:

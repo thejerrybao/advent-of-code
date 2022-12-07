@@ -2,16 +2,8 @@ from aocd.models import Puzzle
 from aocd.transforms import lines
 from string import ascii_letters
 
-# Input
 puzzle = Puzzle(year=2022, day=3)
 rucksacks = lines(puzzle.input_data)
-
-# Solution
-item_priority = {
-    letter: index + 1
-    for index, letter
-    in enumerate(ascii_letters)
-}
 
 
 def get_common_rucksack_item(list_of_rucksacks):
@@ -25,7 +17,11 @@ def get_common_rucksack_item(list_of_rucksacks):
     return intersecting_set.pop()
 
 
-# Answer A
+item_priority = {
+    letter: index + 1
+    for index, letter
+    in enumerate(ascii_letters)
+}
 total_item_priority_sum_part_a = 0
 for rucksack in rucksacks:
     halfway_index = len(rucksack) // 2
@@ -39,7 +35,6 @@ for rucksack in rucksacks:
 
 puzzle.answer_a = total_item_priority_sum_part_a
 
-# Answer B
 total_item_priority_sum_part_b = 0
 rucksack_groups = [rucksacks[i:i+3] for i in range(0, len(rucksacks), 3)]
 for rucksack_group in rucksack_groups:

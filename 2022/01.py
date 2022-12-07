@@ -1,11 +1,9 @@
 from aocd.models import Puzzle
 from aocd.transforms import lines
 
-# Input
 puzzle = Puzzle(year=2022, day=1)
 calories = lines(puzzle.input_data)
 
-# Solution
 running_calorie_count = 0
 elf_calorie_totals = []
 for calorie in calories:
@@ -20,8 +18,5 @@ elf_calorie_totals.sort(reverse=True)
 # Checking that we have at least 3 totals
 assert len(elf_calorie_totals) >= 3
 
-# Answer A
 puzzle.answer_a = elf_calorie_totals[0]
-
-# Answer B
 puzzle.answer_b = sum(elf_calorie_totals[:3])
